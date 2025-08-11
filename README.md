@@ -11,7 +11,7 @@ Este simulado foi desenvolvido como parte do processo de estudo em **prompts par
 - **Cálculo de desempenho** ao final do simulado (acertos, erros e não respondidas).
 - **Estilo visual simples e funcional**, com destaque para respostas corretas e incorretas
 
-!Exemplo de imagem
+!ExemploSimulado_01
 
 ## Como adicionar diferentes tipos de perguntas ao simulado
 
