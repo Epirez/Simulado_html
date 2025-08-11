@@ -22,7 +22,9 @@ Este simulado foi desenvolvido como parte do processo de estudo em **prompts par
 - **Cálculo de desempenho** ao final do simulado (acertos, erros e não respondidas).
 - **Estilo visual simples e funcional**, com destaque para respostas corretas e incorretas
 
-!ExemploSimulado_01
+<p align="center">  
+  <img src="Print01.png" alt="Exemplo Simulado" width="500">  
+</p>  
 
 ## Como adicionar diferentes tipos de perguntas ao simulado
 
