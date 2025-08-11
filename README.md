@@ -23,7 +23,7 @@ Este simulado foi desenvolvido como parte do processo de estudo em **prompts par
 - **Estilo visual simples e funcional**, com destaque para respostas corretas e incorretas
 
 <p align="center">  
-  <img src="Print01.png" alt="Exemplo Simulado" width="500">  
+  <img src="Print01.png" alt="Exemplo Simulado" width="900">  
 </p>  
 
 ## Como adicionar diferentes tipos de perguntas ao simulado
