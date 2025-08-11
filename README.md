@@ -23,7 +23,7 @@ Este simulado foi desenvolvido como parte do processo de estudo em **prompts par
 - **Estilo visual simples e funcional**, com destaque para respostas corretas e incorretas
 
 <p align="center">  
-  <img src="Print01.png" alt="Exemplo Simulado" width="900">  
+  <img src="Print01.png" alt="Exemplo Resultado Final" width="500">  
 </p>  
 
 ## Como adicionar diferentes tipos de perguntas ao simulado
@@ -84,6 +84,9 @@ O tempo restante é exibido na tela e atualizado a cada segundo.
 Quando o tempo chega a zero, o simulado é finalizado automaticamente com a mensagem "Tempo esgotado!".
 O tempo gasto também é mostrado no resultado final.
 
+<p align="center">  
+  <img src="Print02.png" alt="Exemplo Simulado" width="900">  
+</p>  
 
 
 
