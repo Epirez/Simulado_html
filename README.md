@@ -33,6 +33,8 @@ O simulado dinâmico utiliza um array de objetos JavaScript para representar cad
 ### Estrutura básica de uma pergunta
 
 ```js
+// ---- INÍCIO DO ARRAY ----  
+    const questions = [  
 {
   q: "Texto da pergunta",
   options: [
@@ -44,7 +46,12 @@ O simulado dinâmico utiliza um array de objetos JavaScript para representar cad
   answer: 1, // Índice da alternativa correta (começa em 0)
   explanation: "Explicação exibida após a resposta."
 }
+
+];  
+    // ---- FIM DO ARRAY ----  
 ````
+Basta solicitar à IA ou criar perguntas sobre o tema desejado, seguindo esse formato. Depois, insira cada pergunta em seu array de perguntas dentro do código do simulado.
+
 
 ## Como configurar o tempo do simulado
 
