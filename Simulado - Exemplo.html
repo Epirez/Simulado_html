@@ -1,0 +1,202 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>  
+  <meta charset="UTF-8">  
+  <title>Simulado - Exemplo</title>  
+  <style>  
+    .question { margin-bottom: 2em; padding: 1em; border: 1px solid #ccc; border-radius: 6px;}  
+    .correct { background: #aaffaa; }  
+    .incorrect { background: #ffaaaa; }  
+    .explanation { margin-top: 1em; font-style: italic; }  
+    button { margin-bottom: 0.5em; }  
+    #timer { font-weight: bold; font-size: 1.2em; color: #224488; margin-bottom: 1em; }  
+    #result { font-size: 1.2em; background: #eee; padding: 1em; border-radius: 6px; margin-top: 2em;}  
+  </style>  
+</head>  
+<body>  
+  <h1>Simulado - Exemplo</h1>  
+  <div id="timer"></div>  
+  <div id="quiz"></div>  
+  <div id="result"></div>  
+  <script>  
+    // ---- INÍCIO DO ARRAY ----  
+    const questions = [ /* COLE AQUI O ARRAY questions DA SUA PERGUNTA */ 
+
+	{
+q: "O que é um ataque de ransomware?",
+options: [
+"a) Invasão para roubar informações bancárias",
+"b) Sequestro de dados com cobrança de resgate",
+"c) Interceptação de mensagens de texto",
+"d) Acesso remoto não autorizado ao computador"
+],
+answer: 1,
+explanation: "Ransomware é um tipo de malware que bloqueia ou criptografa dados do usuário e exige pagamento de resgate para liberá-los."
+},
+{
+q: "Qual é uma medida fundamental para proteger dispositivos móveis?",
+options: [
+"a) Instalar aplicativos de fontes desconhecidas",
+"b) Usar senhas simples",
+"c) Manter o sistema operacional atualizado",
+"d) Compartilhar dados pessoais em redes públicas"
+],
+answer: 2,
+explanation: "Manter o sistema operacional atualizado protege o dispositivo contra vulnerabilidades e ataques."
+},
+{
+q: "O que significa o termo 'engenharia social' em cybersegurança?",
+options: [
+"a) Uso de redes sociais para divulgar informações",
+"b) Manipulação de pessoas para obter informações confidenciais",
+"c) Criação de softwares para proteger sistemas",
+"d) Compartilhamento de fotos em aplicativos"
+],
+answer: 1,
+explanation: "Engenharia social é a manipulação psicológica de pessoas para que divulguem informações sigilosas ou realizem ações inseguras."
+},
+{
+q: "Qual é o principal objetivo de um antivírus?",
+options: [
+"a) Proteger contra ataques físicos",
+"b) Detectar e remover softwares maliciosos",
+"c) Melhorar a velocidade da internet",
+"d) Realizar backup automático dos arquivos"
+],
+answer: 1,
+explanation: "O antivírus detecta, bloqueia e remove vírus e outros tipos de malware, protegendo o computador."
+},
+{
+q: "O que é um certificado digital?",
+options: [
+"a) Documento físico que comprova identidade",
+"b) Ferramenta de criptografia usada para autenticar usuários e sites",
+"c) Programa de edição de texto",
+"d) Senha temporária para acesso ao sistema"
+],
+answer: 1,
+explanation: "O certificado digital é utilizado para garantir a autenticidade e segurança de comunicações eletrônicas, como em sites seguros (HTTPS)."
+}
+	
+	];  
+    // ---- FIM DO ARRAY ----  
+  
+    // Embaralha perguntas  
+    function shuffleArray(array) {  
+      for (let i = array.length - 1; i > 0; i--) {  
+        const j = Math.floor(Math.random() * (i + 1));  
+        [array[i], array[j]] = [array[j], array[i]];  
+      }  
+    }  
+    shuffleArray(questions);  
+  
+    // Timer  
+    let totalTime = 40 * 60; // minutos (em segundos) - ajuste como quiser  
+    let timeLeft = totalTime;  
+    let timerInterval = null;  
+    let quizStarted = false;  
+    let quizEnded = false;  
+  
+    // Controle de respostas  
+    let corrects = 0;  
+    let errors = 0;  
+    let answered = Array(questions.length).fill(false);  
+  
+    // Mostra o timer  
+    function renderTimer() {  
+      const t = document.getElementById('timer');  
+      const min = Math.floor(timeLeft / 60).toString().padStart(2, '0');  
+      const sec = (timeLeft % 60).toString().padStart(2, '0');  
+      t.textContent = `Tempo restante: ${min}:${sec}`;  
+    }  
+  
+    // Finaliza o quiz e mostra o resultado  
+    function finishQuiz(reason='') {  
+      if (quizEnded) return;  
+      quizEnded = true;  
+      clearInterval(timerInterval);  
+      document.querySelectorAll('button').forEach(btn => btn.disabled = true);  
+      const timeUsed = totalTime - timeLeft;  
+      const min = Math.floor(timeUsed / 60).toString();  
+      const sec = (timeUsed % 60).toString().padStart(2, '0');  
+	  
+	// Conta quantas não foram respondidas  
+    const notAnswered = answered.filter(a => !a).length;
+	  
+      document.getElementById('result').innerHTML = `  
+        <b>${reason ? 'Tempo esgotado!<br>' : ''}Resultado final:</b>  
+        <br>  
+        Acertos: <b>${corrects}</b> / ${questions.length}<br>  
+        Erros: <b>${errors}</b> / ${questions.length}<br>
+        Não respondidas: ${notAnswered}<br>  		
+        Tempo gasto: <b>${min}:${sec}</b>  
+      `;  
+      document.getElementById('timer').style.color = '#888';  
+    }  
+  
+    // Renderiza o quiz na tela  
+    function renderQuiz() {  
+      const quizDiv = document.getElementById('quiz');  
+      quizDiv.innerHTML = '';  
+      questions.forEach((question, qi) => {  
+        const qDiv = document.createElement('div');  
+        qDiv.className = 'question';  
+        const qTitle = document.createElement('div');  
+        qTitle.textContent = (qi + 1) + '. ' + question.q;  
+        qDiv.appendChild(qTitle);  
+  
+        question.options.forEach((opt, oi) => {  
+          const btn = document.createElement('button');  
+          btn.textContent = opt;  
+          btn.onclick = () => {  
+            if (quizEnded || answered[qi]) return;  
+            answered[qi] = true;  
+            Array.from(qDiv.getElementsByTagName('button')).forEach(b => b.disabled = true);  
+            if (oi === question.answer) {  
+              btn.className = 'correct';  
+              corrects++;  
+              const exp = document.createElement('div');  
+              exp.className = 'explanation';  
+              exp.textContent = "Correto! " + question.explanation;  
+              qDiv.appendChild(exp);  
+            } else {  
+              btn.className = 'incorrect';  
+              errors++;  
+              const exp = document.createElement('div');  
+              exp.className = 'explanation';  
+              exp.textContent = "Incorreto. " + question.explanation;  
+              qDiv.appendChild(exp);  
+            }  
+            // Se todas respondidas, finaliza  
+            if (corrects + errors === questions.length) {  
+              finishQuiz();  
+            }  
+          };  
+          qDiv.appendChild(btn);  
+          qDiv.appendChild(document.createElement('br'));  
+        });  
+        quizDiv.appendChild(qDiv);  
+      });  
+    }  
+  
+    // Inicia o timer e quiz  
+    function startQuiz() {  
+      renderQuiz();  
+      renderTimer();  
+      quizStarted = true;  
+      timerInterval = setInterval(() => {  
+        if (quizEnded) return;  
+        timeLeft--;  
+        renderTimer();  
+        if (timeLeft <= 0) {  
+          finishQuiz('timeout');  
+        }  
+      }, 1000);  
+    }  
+  
+    // Inicia automaticamente  
+    startQuiz();  
+  
+  </script>  
+</body>  
+</html>  
