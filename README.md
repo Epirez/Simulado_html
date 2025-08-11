@@ -1,7 +1,7 @@
 
 
 ## Sobre este Simulado Dinâmico
-Este simulado foi desenvolvido como parte do processo de estudo em **prompts para IA** com uma aplicação prática. A estrutura HTML e JavaScript utilizada permite a apresentação dinâmica de perguntas, controle de tempo e feedback imediato ao usuário.
+Este simulado foi desenvolvido como parte do processo de estudo em **prompts para IA** com uma aplicação prática simples. A estrutura HTML e JavaScript utilizada permite a apresentação dinâmica de perguntas, controle de tempo e feedback imediato ao usuário.
 
  Estratégias conhecidas de engenharia de prompts utilizadas: 
 
