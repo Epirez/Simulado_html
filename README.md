@@ -1,21 +1,20 @@
 
 
-## Simulado Dinâmico
-Este simulado foi desenvolvido como parte do processo de estudo em prompts para IA com uma aplicação prática simples. A estrutura HTML e JavaScript utilizada permite a apresentação dinâmica de perguntas, controle de tempo e feedback imediato ao usuário.
+## Simulado
+Este simulado foi desenvolvido como uma ideia inicial para facilitar e auxiliar estudos em momentos em que não houver simulados disponíveis. Ele serve como guia prático para quem deseja criar seu próprio simulado de forma rápida e eficiente, utilizando uma estrutura simples em HTML e JavaScript. O modelo permite apresentar perguntas de forma dinâmica, controlar o tempo de resposta e fornecer feedback imediato ao usuário, tornando o estudo mais interativo e personalizado. Além disso, este recurso foi utilizado para testar e consolidar conhecimentos adquiridos no curso de <a href="https://www.udemy.com/course/engenharia-de-prompts-com-ia/?srsltid=AfmBOopn8dginJHeItDNy300TBKV6gNK4C54r3UBVl1Cn8H_R25GZPW0&couponCode=KEEPLEARNINGBR" target="_blank">Engenharia de Prompts com IA</a>  .
 
 
 
+ Estratégias de engenharia de prompts, essas estratégias ajudam a orientar o modelo de linguagem para gerar conteúdos mais precisos, criativos e funcionais: 
 
- Estratégias conhecidas de engenharia de prompts utilizadas: 
-
-| **Estratégia**         | **Descrição**                                                                     | **Como Aplicar na Geração do Quiz**                                                                                                    | **Exemplo Prático de Prompt para o Quiz** |  
+| **Estratégia**         | **Descrição**                                                                     | **Como Aplicar na Geração do Simulado**                                                                                                    | **Exemplo Prático de Prompt para o Simulado** |  
 |------------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|  
-| Chain of Thought       | Orienta o modelo a pensar passo a passo, detalhando o raciocínio.                 | Solicite que o modelo explique cada etapa do processo de criação do quiz, do planejamento ao código final.                            | "Descreva passo a passo como gerar um quiz interativo, incluindo estrutura de perguntas, lógica de respostas, timer e feedback visual." |  
-| Role Play              | O modelo assume um papel específico.                                              | Peça para o modelo agir como um desenvolvedor front-end ou especialista em educação digital.                                          | "Finja que você é um desenvolvedor web especializado em quizzes educacionais. Como você criaria um quiz de segurança digital interativo?" |  
-| Few-shot Prompting     | Exemplos são fornecidos para ilustrar como responder.                             | Apresente exemplos de perguntas formatadas antes de pedir ao modelo para criar novas seguindo o mesmo padrão.                          | "Aqui estão dois exemplos de perguntas para o quiz: {…}. Crie mais três seguindo esse formato." |  
-| Zero-shot Prompting    | O modelo recebe apenas a tarefa, sem exemplos prévios.                            | Peça para o modelo criar perguntas ou o código do quiz apenas com a instrução básica, sem exemplos.                                   | "Crie um quiz de cinco perguntas sobre segurança digital com alternativas e feedback imediato." |  
-| Instruction Prompting  | O modelo recebe instruções explícitas sobre como responder ou formatar.            | Dê instruções claras sobre estrutura do array de perguntas, funcionalidades e estilo desejado.                                        | "Gere um array JavaScript de perguntas para um quiz, cada uma com quatro alternativas, identificando a correta e incluindo explicação." |  
-| Self-Consistency       | O modelo gera múltiplos raciocínios e escolhe a resposta mais comum/consistente.  | Peça para o modelo sugerir três abordagens de implementação do quiz e escolher a mais eficiente ou didática.                          | "Proponha três formas diferentes de implementar um quiz interativo em HTML/JS e selecione a mais didática para iniciantes." |  
+| Chain of Thought       | Orienta o modelo a pensar passo a passo, detalhando o raciocínio.                 | Solicite que o modelo explique cada etapa do processo de criação do Simulado, do planejamento ao código final.                            | "Descreva passo a passo como gerar um Simulado interativo, incluindo estrutura de perguntas, lógica de respostas, timer e feedback visual." |  
+| Role Play              | O modelo assume um papel específico.                                              | Peça para o modelo agir como um desenvolvedor front-end ou especialista em educação digital.                                          | "Finja que você é um desenvolvedor web especializado em Simuladores educacionais. Como você criaria um Simulado de segurança digital interativo?" |  
+| Few-shot Prompting     | Exemplos são fornecidos para ilustrar como responder.                             | Apresente exemplos de perguntas formatadas antes de pedir ao modelo para criar novas seguindo o mesmo padrão.                          | "Aqui estão dois exemplos de perguntas para o Simulado: {…}. Crie mais três seguindo esse formato." |  
+| Zero-shot Prompting    | O modelo recebe apenas a tarefa, sem exemplos prévios.                            | Peça para o modelo criar perguntas ou o código do Simulado apenas com a instrução básica, sem exemplos.                                   | "Crie um Simulado de cinco perguntas sobre segurança digital com alternativas e feedback imediato." |  
+| Instruction Prompting  | O modelo recebe instruções explícitas sobre como responder ou formatar.            | Dê instruções claras sobre estrutura do array de perguntas, funcionalidades e estilo desejado.                                        | "Gere um array JavaScript de perguntas para um Simulado, cada uma com quatro alternativas, identificando a correta e incluindo explicação." |  
+| Self-Consistency       | O modelo gera múltiplos raciocínios e escolhe a resposta mais comum/consistente.  | Peça para o modelo sugerir três abordagens de implementação do Simulado e escolher a mais eficiente ou didática.                          | "Proponha três formas diferentes de implementar um Simulado interativo em HTML/JS e selecione a mais didática para iniciantes." |  
 
 
 ### Funcionalidades principais:
@@ -67,8 +66,8 @@ O tempo total do simulado é definido em segundos na variável `totalTime`. Essa
 let totalTime = 40 * 60; // minutos (em segundos) - ajuste como quiser
 let timeLeft = totalTime;
 let timerInterval = null;
-let quizStarted = false;
-let quizEnded = false;
+let SimuladoStarted = false;
+let SimuladoEnded = false;
 ````
 ### Como alterar o tempo
 A fórmula usada é:
