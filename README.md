@@ -1,7 +1,7 @@
 
 
 ## Simulado
-Este simulado foi desenvolvido como uma ideia inicial para facilitar e auxiliar estudos em momentos que não houver simulados disponíveis. Ele serve como guia prático para quem deseja criar seu próprio simulado de forma rápida e eficiente, utilizando uma estrutura simples em HTML e JavaScript. O modelo permite apresentar perguntas de forma dinâmica, controlar o tempo de resposta e fornecer feedback imediato ao usuário, tornando o estudo mais interativo e personalizado. Além disso, este recurso foi utilizado para testar e consolidar conhecimentos adquiridos no curso de <a href="https://www.udemy.com/course/engenharia-de-prompts-com-ia/?srsltid=AfmBOopn8dginJHeItDNy300TBKV6gNK4C54r3UBVl1Cn8H_R25GZPW0&couponCode=KEEPLEARNINGBR" target="_blank">Engenharia de Prompts com IA</a>  .
+Este simulado foi desenvolvido como uma ideia inicial para facilitar e auxiliar estudos em momentos que não houver simulados disponíveis. Ele serve como guia prático para quem deseja criar seu próprio simulado de forma rápida e eficiente, utilizando IA para criar perguntas e uma estrutura simples em HTML e JavaScript. O modelo permite apresentar perguntas de forma dinâmica, controlar o tempo de resposta e fornecer feedback imediato ao usuário, tornando o estudo mais interativo e personalizado. Além disso, este recurso foi utilizado para testar e consolidar conhecimentos adquiridos no curso de <a href="https://www.udemy.com/course/engenharia-de-prompts-com-ia/?srsltid=AfmBOopn8dginJHeItDNy300TBKV6gNK4C54r3UBVl1Cn8H_R25GZPW0&couponCode=KEEPLEARNINGBR" target="_blank">Engenharia de Prompts com IA</a>  .
 
 
 
