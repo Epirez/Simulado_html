@@ -1,6 +1,6 @@
 
 
-## Simulado
+## Sobre
 Este simulado foi desenvolvido como proposta inicial para facilitar os estudos em momentos em que não houver simulados disponíveis. O objetivo é servir como um guia prático para quem deseja criar seu próprio simulado de forma rápida e eficiente, utilizando Inteligência Artificial exclusivamente para a elaboração das perguntas. Após a geração das questões pela IA, é possível integrá-las à estrutura de HTML e JavaScript já implementada no repositório do GitHub. Esse modelo possibilita a apresentação dinâmica das perguntas, o controle do tempo de resposta e o fornecimento de feedback imediato, tornando o processo de estudo mais interativo e personalizado. Além disso, esse recurso foi utilizado para testar e consolidar os conhecimentos adquiridos durante o curso de <a href="https://www.udemy.com/course/engenharia-de-prompts-com-ia/?srsltid=AfmBOopn8dginJHeItDNy300TBKV6gNK4C54r3UBVl1Cn8H_R25GZPW0&couponCode=KEEPLEARNINGBR" target="_blank">Engenharia de Prompts com IA</a> .
 
 
